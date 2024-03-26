@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bootstrap Site</title>
-  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="{{ asset('css/news.css') }}">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
     integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
@@ -58,29 +58,24 @@
       </div>
     </div>
   </nav>
-  </nav>
+  </div>
+  
   <div class="hero-section">
-    <img src="{{ asset('img/B2.jpg') }}" alt="Your Image Description">
+    <img src="{{ asset('img/write.jpg') }}" alt="Your Image Description">
     <div class="overlay">
-      <div class="overlay-text">ABOUT</div>
+      <div class="overlay-text">{{ $posting->title }}</div>
     </div>
   </div>
 
-    <div class="about-drop">
-      <div class="choice" onclick="showDescription('first')">Apa itu UPTD PDA ?</div>
-      <div class="description" id="first">UPTD PPA di Dinas P3AP2KB merupakan sebuah organisasi yang bertanggung jawab untuk melaksanakan kegiatan teknis operasional 
-        dalam memberikan pelayanan kepada perempuan dan anak yang menjadi korban kekerasan dan diskriminasi, serta anak-anak yang terlibat dalam masalah hukum di wilayah tersebut.</div>
-
-      <div class="choice mt-3" onclick="showDescription('second')">Sejarah UPTD PDA</div>
-      <div class="description" id="second">UPTD PPA berdiri pada tahun 2012, demi menunjukan komitmen Pemerintah Daerah dalam menangani masalah perempuan dan anak, terutama yang berkaitan dengan kekerasan dan permasalahan lain dalam situasi dan kondisi tertentu.
-        Ruang lingkup yang akan dijelaskan dalam konsep ini bertujuan untuk memberikan panduan mengenai pendirian UPTD PPA di Dinas P3AP2KB, tugas dan fungsinya, serta mekanisme layanan yang sesuai dengan Peraturan Menteri Dalam Negeri Nomor 12 Tahun 2017 tentang Panduan Pembentukan Cabang Dinas dan Unit Pelaksana Teknis Daerah.
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <img src="{{ asset('storage/public/images-post/' . $posting->image_url) }}" class="img-fluid">
+            <p>{{ $posting->description }}</p>
+            <!-- Tambahkan elemen HTML lainnya sesuai kebutuhan -->
         </div>
-
-      <div class="choice mt-3" onclick="showDescription('third')">Tugas UPTD PDA</div>
-      <div class="description" id="third">Tugas dari UPTD PPA adalah membantu dalam sebagian tugas yang dilakukan oleh dinas yang bertanggung jawab atas urusan pemerintahan dalam bidang perlindungan perempuan dan anak. Mereka menjalankan kegiatan teknis operasional yang secara langsung berkaitan dengan pelayanan kepada perempuan dan perlindungan khusus terhadap anak dalam situasi dan kondisi tertentu.</div>
     </div>
-
-
+</div>
   <div class="footer-section">
     <footer class="footer">
       <div class="waves">
@@ -129,21 +124,22 @@
         }
     }
     </script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector(".navbar");
-
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbar = document.querySelector(".navbar");
+  
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
     });
-  });
-</script>
+  </script>
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

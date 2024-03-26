@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bootstrap Site</title>
-  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="{{ asset('css/news.css') }}">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
     integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
+
 </head>
 
 <body>
@@ -58,27 +60,68 @@
       </div>
     </div>
   </nav>
-  </nav>
+  </div>
+  
   <div class="hero-section">
-    <img src="{{ asset('img/B2.jpg') }}" alt="Your Image Description">
+    <img src="{{ asset('img/write.jpg') }}" alt="Your Image Description">
     <div class="overlay">
-      <div class="overlay-text">ABOUT</div>
+      <div class="overlay-text">COMPLAIN</div>
     </div>
   </div>
 
-    <div class="about-drop">
-      <div class="choice" onclick="showDescription('first')">Apa itu UPTD PDA ?</div>
-      <div class="description" id="first">UPTD PPA di Dinas P3AP2KB merupakan sebuah organisasi yang bertanggung jawab untuk melaksanakan kegiatan teknis operasional 
-        dalam memberikan pelayanan kepada perempuan dan anak yang menjadi korban kekerasan dan diskriminasi, serta anak-anak yang terlibat dalam masalah hukum di wilayah tersebut.</div>
+  <div class="container mt-5">
+    <h2 style="text-align: center">PLEASE LOGIN OR REGISTER FIRST</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form method="POST" action="{{ route('loginComplain') }}">
+                @csrf
 
-      <div class="choice mt-3" onclick="showDescription('second')">Sejarah UPTD PDA</div>
-      <div class="description" id="second">UPTD PPA berdiri pada tahun 2012, demi menunjukan komitmen Pemerintah Daerah dalam menangani masalah perempuan dan anak, terutama yang berkaitan dengan kekerasan dan permasalahan lain dalam situasi dan kondisi tertentu.
-        Ruang lingkup yang akan dijelaskan dalam konsep ini bertujuan untuk memberikan panduan mengenai pendirian UPTD PPA di Dinas P3AP2KB, tugas dan fungsinya, serta mekanisme layanan yang sesuai dengan Peraturan Menteri Dalam Negeri Nomor 12 Tahun 2017 tentang Panduan Pembentukan Cabang Dinas dan Unit Pelaksana Teknis Daerah.
+                <div class="mt-3 mb-3">
+                    <label for="email" class="form-label">{{ __('E-Mail Address') }}</label>
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Your Email">
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">{{ __('Password') }}</label>
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <button type="submit" class="btn btn-primary">{{ __('Login') }}</button>
+            </form>
         </div>
-
-      <div class="choice mt-3" onclick="showDescription('third')">Tugas UPTD PDA</div>
-      <div class="description" id="third">Tugas dari UPTD PPA adalah membantu dalam sebagian tugas yang dilakukan oleh dinas yang bertanggung jawab atas urusan pemerintahan dalam bidang perlindungan perempuan dan anak. Mereka menjalankan kegiatan teknis operasional yang secara langsung berkaitan dengan pelayanan kepada perempuan dan perlindungan khusus terhadap anak dalam situasi dan kondisi tertentu.</div>
+        <div class="col-md-6">
+            <form method="POST" action="{{ route('registerComplain') }}">
+                @csrf <!-- Tambahkan CSRF token di sini -->
+        
+                <div class="mt-3 mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                </div>
+                <div class="mt-3 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="password" class="form-control" id="password">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
     </div>
+  </div>
 
 
   <div class="footer-section">
@@ -114,6 +157,29 @@
       <p>&copy;2023 | All Rights Reserved</p>
     </footer>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  @if(Session::has('success'))
+    <script>
+        swal({
+            title: "Success",
+            text: "{{ Session::get('success') }}",
+            icon: "success",
+            button: "OK",
+        });
+    </script>
+@endif
+
+@if(Session::has('error'))
+    <script>
+        swal({
+            title: "Error",
+            text: "{{ Session::get('error') }}",
+            icon: "error",
+            button: "OK",
+        });
+    </script>
+@endif
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
@@ -129,21 +195,22 @@
         }
     }
     </script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector(".navbar");
-
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbar = document.querySelector(".navbar");
+  
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
     });
-  });
-</script>
+  </script>
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

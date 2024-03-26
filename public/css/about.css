@@ -339,3 +339,25 @@ body {
   
 
 }
+
+@media (max-width: 1200px) {
+  .about-section {
+    height: 60vh; /* Tinggi bagian about section untuk layar desktop */
+  }
+
+  .about-title {
+    font-size: 50px; /* Ukuran font judul about section untuk layar desktop */
+    padding-left: 5%; /* Padding kiri judul about section untuk layar desktop */
+    padding-top: 5%; /* Padding atas judul about section untuk layar desktop */
+  }
+
+  .choice {
+    font-size: 30px; /* Ukuran font pilihan untuk layar desktop */
+  }
+
+  .about-drop {
+    max-width: 70%; /* Lebar maksimum drop-down untuk layar desktop */
+    margin: 50px auto; /* Margin drop-down untuk layar desktop */
+    padding: 20px; /* Padding drop-down untuk layar desktop */
+  }
+}

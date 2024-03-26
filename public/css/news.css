@@ -17,13 +17,13 @@ body {
       object-fit: cover;
     }
     .navbar {
-      transition: background-color 0.3s ease-in-out;
-    }
-  
-    .navbar.scrolled {
-      background-color: white; /* Ubah sesuai dengan warna yang diinginkan saat di-scroll */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan jika diinginkan */
-    }
+        transition: background-color 0.3s ease-in-out;
+      }
+    
+      .navbar.scrolled {
+        background-color: white; /* Ubah sesuai dengan warna yang diinginkan saat di-scroll */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan jika diinginkan */
+      }
     .overlay {
       position: absolute;
       top: 0;
@@ -287,78 +287,4 @@ body {
       }
     }
   
-    .about-section{
-      height:60vh;
-    }
-  
-    /* .parallax{
-       background: url("/img/background1.jpg");
-  
-    min-height: 500px; 
-  
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    } */
-  
-    .about-title{
-      font-size: 50px;
-      font-family: 'Times New Roman', Times, serif;
-      padding-left: 5%;
-      padding-top: 5%;
-    }
-  
-    .choice {
-      margin-bottom: 10px;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      color: black;
-      border-bottom: 1px solid black; /* Garis bawah untuk setiap pilihan */
-      padding-bottom: 5px; /* Jarak antara teks dan garis bawah */
-  }
-  
-  .choice:hover {
-      color: black;
-  }
-  
-  .description {
-      display: none;
-      margin-top: 10px;
-  }
-  
-  .contact-section{
-    height: 30vh;
-  }
-
-  .card:hover {
-    transform: scale(1.05); /* Mengubah skala kartu ketika dihover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambah bayangan ketika dihover */
-    transition: transform 0.3s, box-shadow 0.3s; /* Efek transisi agar halus */
-  }
-
-  .icon{
-    width: 7%; /* Sesuaikan dengan ukuran yang diinginkan */
-    height: auto; /* Menggunakan 'auto' agar rasio aspek tetap terjaga */
-    margin-right: 5%;
-  }
-
-  @media screen and (max-width: 375px) {
-    .social-icon__link {
-      font-size: 1.5rem;
-    }
-  }
-  
-  @media screen and (max-width: 576px) {
-    .social-icon__link {
-      font-size: 1.8rem;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .social-icon__link {
-      font-size: 2rem;
-    }
-  }
+   

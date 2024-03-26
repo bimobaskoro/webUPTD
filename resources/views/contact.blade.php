@@ -26,32 +26,31 @@
   <nav class="navbar fixed-top navbar-expand-lg navbar-light">
     <div class="container-fluid">
       <img class="logo" src="img/logo.png">
-      
+      <span class="navbar-text ml-3">
+        UNIT PELAKSANAAN TEKNIS PERLINDUNGAN PEREMPUAN DAN ANAK
+    </span>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{url('/home')}}">HOME</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">ABOUT</a>
+            <a class="nav-link active" aria-current="page" href="{{url('/about')}}">ABOUT</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                VISI & MISI
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <!-- Add dropdown items here -->
-                <li><a class="dropdown-item" href="#">Visi</a></li>
-                <li><a class="dropdown-item" href="#">Misi</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url('/visimisi')}}">VISI</a>
+          </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">INFORMATION</a>
+              <a class="nav-link active" aria-current="page" href="{{url('/information')}}">INFORMATION</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">CONTACT</a>
+              <a class="nav-link active" aria-current="page" href="{{url('/contactUs')}}">CONTACT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{url('/complain')}}">COMPLAIN</a>
             </li>
         </li>
         </ul>

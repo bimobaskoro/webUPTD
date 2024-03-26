@@ -36,14 +36,8 @@ body {
 .overlay-text {
   font-family: 'Times New Roman', Times, serif;
   font-size: 100px;
-  margin-right: 25%;
 }
 
-.overlay-text-2 {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 100px;
-  margin-left: 20%;
-}
 
 .about-section {
   height: 50vh;
@@ -289,9 +283,7 @@ Generic layout (demo looks)
   background: green;
 }
 
-.footer-section{
-  height: 30vh;
-}
+
 
 .footer {
   position: relative;
@@ -408,5 +400,173 @@ Generic layout (demo looks)
   }
   100% {
     background-positon-x: 0px;
+  }
+}
+
+/* Untuk layar dengan lebar maksimum 768px */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 16px; /* Mengurangi padding untuk navbar */
+  }
+
+  .logo {
+    width: 80px; /* Mengurangi ukuran logo untuk layar yang lebih kecil */
+  }
+
+  .overlay-text,
+  .overlay-text-2 {
+    font-size: 60px; /* Mengurangi ukuran teks overlay pada hero section */
+  }
+
+  .about-text {
+    padding-left: 10%; /* Mengurangi padding untuk teks di bagian about section */
+    padding-right: 10%;
+  }
+
+  .article-body {
+    padding: 16px; /* Mengurangi padding untuk artikel pada section informasi */
+  }
+
+  .menu {
+    flex-direction: column; /* Mengubah orientasi menu di footer menjadi vertikal */
+    align-items: center;
+  }
+
+  .social-icon {
+    margin-bottom: 20px; /* Mengurangi margin bawah pada social icon di footer */
+  }
+}
+
+/* Untuk layar dengan lebar maksimum 576px */
+@media (max-width: 576px) {
+
+  .footer {
+    position: relative;
+    width: 100%;
+    margin-top: 160%;
+    background: #3E4149;
+    min-height: 100px;
+    padding: 62px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .about-section {
+    height: 40vh; /* Tinggi bagian about section untuk layar dengan lebar 576px */
+  }
+
+  .about-title {
+    font-size: 30px; /* Ukuran font judul about section untuk layar dengan lebar 576px */
+    padding-left: 5%; /* Padding kiri judul about section untuk layar dengan lebar 576px */
+    padding-top: 5%; /* Padding atas judul about section untuk layar dengan lebar 576px */
+  }
+
+  .choice {
+    font-size: 20px; /* Ukuran font pilihan untuk layar dengan lebar 576px */
+  }
+
+  .about-drop {
+    max-width: 90%; /* Lebar maksimum drop-down untuk layar dengan lebar 576px */
+    margin: 50px auto; /* Margin drop-down untuk layar dengan lebar 576px */
+    padding: 10px; /* Padding drop-down untuk layar dengan lebar 576px */
+  }
+
+}
+
+@media (max-width: 375px) {
+  .overlay-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+  }
+  
+  .overlay-text-2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+  }
+  .footer {
+    position: relative;
+    width: 100%;
+    margin-top: 260%;
+    background: #3E4149;
+    min-height: 100px;
+    padding: 62px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+}
+
+/* Untuk layar dengan lebar maksimum 1200px (desktop) */
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 12px 24px; /* Mengurangi padding untuk navbar pada layar desktop */
+  }
+
+  .logo {
+    width: 120px; /* Menyesuaikan ukuran logo untuk layar desktop */
+  }
+
+  .overlay-text,
+  .overlay-text-2 {
+    font-size: 80px; /* Mengubah ukuran teks overlay pada hero section untuk layar desktop */
+  }
+
+  .about-text {
+    padding-left: 20%; /* Mengubah padding untuk teks di bagian about section pada layar desktop */
+    padding-right: 20%;
+  }
+
+  .article-body {
+    padding: 24px; /* Mengubah padding untuk artikel pada section informasi pada layar desktop */
+  }
+}
+
+/* Untuk layar dengan lebar maksimum 768px */
+@media (max-width: 768px) {
+  .about-section {
+    height: 50vh; /* Tinggi bagian about section untuk layar dengan lebar 768px */
+  }
+
+  .about-title {
+    font-size: 40px; /* Ukuran font judul about section untuk layar dengan lebar 768px */
+    padding-left: 5%; /* Padding kiri judul about section untuk layar dengan lebar 768px */
+    padding-top: 5%; /* Padding atas judul about section untuk layar dengan lebar 768px */
+  }
+
+  .choice {
+    font-size: 25px; /* Ukuran font pilihan untuk layar dengan lebar 768px */
+  }
+
+  .about-drop {
+    max-width: 80%; /* Lebar maksimum drop-down untuk layar dengan lebar 768px */
+    margin: 50px auto; /* Margin drop-down untuk layar dengan lebar 768px */
+    padding: 15px; /* Padding drop-down untuk layar dengan lebar 768px */
+  }
+}
+
+/* Untuk layar dengan lebar maksimum 375px */
+@media (max-width: 375px) {
+  .about-section {
+    height: 30vh; /* Tinggi bagian about section untuk layar dengan lebar 375px */
+  }
+
+  .about-title {
+    font-size: 25px; /* Ukuran font judul about section untuk layar dengan lebar 375px */
+    padding-left: 5%; /* Padding kiri judul about section untuk layar dengan lebar 375px */
+    padding-top: 5%; /* Padding atas judul about section untuk layar dengan lebar 375px */
+  }
+
+  .choice {
+    font-size: 18px; /* Ukuran font pilihan untuk layar dengan lebar 375px */
+  }
+
+  .about-drop {
+    max-width: 100%; /* Lebar maksimum drop-down untuk layar dengan lebar 375px */
+    margin: 50px auto; /* Margin drop-down untuk layar dengan lebar 375px */
+    padding: 8px; /* Padding drop-down untuk layar dengan lebar 375px */
   }
 }

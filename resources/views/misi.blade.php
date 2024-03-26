@@ -35,10 +35,10 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{url('/home')}}">HOME</a>
+            <a class="nav-link active" aria-current="page" href="#">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">ABOUT</a>
+            <a class="nav-link active" aria-current="page" href="{{url('/about')}}">ABOUT</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,14 +46,14 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <!-- Add dropdown items here -->
-                <li><a class="dropdown-item" href="#">Visi</a></li>
-                <li><a class="dropdown-item" href="#">Misi</a></li>
+                <li><a class="dropdown-item" href="{{url('/visimisi')}}">Visi</a></li>
+                <li><a class="dropdown-item" href="{{url('/misi')}}">Misi</a></li>
             </ul>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">INFORMATION</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">CONTACT</a>
+              <a class="nav-link active" aria-current="page" href="{{url('/contactUs')}}">CONTACT</a>
             </li>
         </li>
         </ul>

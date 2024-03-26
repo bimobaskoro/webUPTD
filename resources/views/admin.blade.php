@@ -66,6 +66,7 @@
           <tr>
               <th>ID</th>
               <th>Title</th>
+              <th>Image</th> <!-- Tambahkan kolom gambar -->
               <th>Description</th>
               <!-- Tambahkan kolom sesuai kebutuhan -->
           </tr>
@@ -79,6 +80,7 @@
               echo "<tr>";
               echo "<td>" . $post->id . "</td>";
               echo "<td>" . $post->title . "</td>";
+              echo "<td><img src='" . asset('storage/public/images-post/' . $post->image_url) . "' alt='Image'></td>"; // Menampilkan gambar
               echo "<td>" . $post->description . "</td>";
               // Tambahkan kolom sesuai kebutuhan
               echo "</tr>";

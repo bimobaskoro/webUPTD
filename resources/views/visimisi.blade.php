@@ -26,32 +26,31 @@
   <nav class="navbar fixed-top navbar-expand-lg navbar-light">
     <div class="container-fluid">
       <img class="logo" src="img/logo.png">
-      
+      <span class="navbar-text ml-3">
+        UNIT PELAKSANAAN TEKNIS PERLINDUNGAN PEREMPUAN DAN ANAK
+    </span>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{url('/home')}}">HOME</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">ABOUT</a>
+            <a class="nav-link active" aria-current="page" href="{{url('/about')}}">ABOUT</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                VISI & MISI
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <!-- Add dropdown items here -->
-                <li><a class="dropdown-item" href="#">Visi</a></li>
-                <li><a class="dropdown-item" href="#">Misi</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url('/visimisi')}}">VISI</a>
+          </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">INFORMATION</a>
+              <a class="nav-link active" aria-current="page" href="{{url('/information')}}">INFORMATION</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">CONTACT</a>
+              <a class="nav-link active" aria-current="page" href="{{url('/contactUs')}}">CONTACT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{url('/complain')}}">COMPLAIN</a>
             </li>
         </li>
         </ul>
@@ -59,16 +58,89 @@
       </div>
     </div>
   </nav>
-  <div class="hero-section">
-    <img src="{{ asset('img/P1.jpg') }}" alt="Your Image Description">
-    <div class="overlay">
-      <div class="overlay-text">VISI</div>
+  </div>
+  <div class="b-img1">
+    <div class="caption-title">
+      <span class="border">      VISI & MISI      </span>
     </div>
   </div>
 
-    <div class="visi mt-5">
+  <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: center;">
+    <h3 style="text-align: center">VISI </h3>
+    <p>
       Membantu menyelesaikan masalah perempuan dan anak khususnya masalah kekerasan atau masalah-masalah lain terkait dengan perempuan dan anak dalam situasi dan kondisi tertentu.
+    </p>
+  </div>
+
+  <div class="b-img2"></div>
+
+  <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: center;">
+    <h3 style="text-align: center">MISI </h3>
+
+    <div class="row mt-3">
+      <div class="card">
+        <div class="card-body">
+          <p>Menerima layanan pengaduan tentang permasalahan perempuan dan anak.</p>
+        </div>
+      </div>
     </div>
+
+    <div class="row mt-3">
+      <div class="card">
+        <div class="card-body">
+          <p> Memberikan layanan pendampingan hukum bagi perempuan dan anak yang mengalami permasalahan.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="card">
+        <div class="card-body">
+          <p> Memberikan layanan pendampingan psikologis bagi perempuan dan anak yang mengalami permasalahan.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="card">
+        <div class="card-body">
+          <p>Memberikan layanan pendampingan untuk mendapatkan restitusi bagi perempuan dan anak yang mengalami permasalahan.</p>
+        </div>
+      </div>
+    </div>
+   
+    <div class="row mt-3">
+      <div class="card">
+        <div class="card-body">
+          <p>Memberikan layanan perlindungan khusus bagi anak.</p>
+        </div>
+      </div>
+    </div>
+   
+    <div class="row mt-3">
+      <div class="card">
+        <div class="card-body">
+          <p>Memberikan layanan perlindungan perempuan dan anak dari ancaman yang membahayakan diri dan jiwa korban.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="card">
+        <div class="card-body">
+          <p>Layanan pendampingan untuk mendapatkan restitusi diberikan kepada perempuan dan anak yang mengalami permasalahan karena korban selama ini tidak tahu akan haknya.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+
+  {{-- <div class="b-img3"></div> --}}
+
+
 
 
   <div class="footer-section">

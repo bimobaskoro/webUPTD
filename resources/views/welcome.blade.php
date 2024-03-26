@@ -36,25 +36,22 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">HOME</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">HOME</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{url('/about')}}">ABOUT</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                VISI & MISI
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <!-- Add dropdown items here -->
-                <li><a class="dropdown-item" href="#">Visi</a></li>
-                <li><a class="dropdown-item" href="#">Misi</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url('/visimisi')}}">VISI</a>
+          </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">INFORMATION</a>
+              <a class="nav-link active" aria-current="page" href="{{url('/information')}}">INFORMATION</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">CONTACT</a>
+              <a class="nav-link active" aria-current="page" href="{{url('/contactUs')}}">CONTACT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{url('/complain')}}">COMPLAIN</a>
             </li>
         </li>
         </ul>
@@ -63,10 +60,11 @@
     </div>
   </nav>
   <div class="hero-section">
-    <img src="{{ asset('img/b3.jpg') }}" alt="Your Image Description">
+    <img src="{{ asset('img/B1.jpg') }}" alt="Your Image Description">
     <div class="overlay">
-      <div class="overlay-text">STOP KEKERASAN</div>
-      <div class="overlay-text-2">PADA ANAK DAN PEREMPUAN</div>
+      <center>
+        <div class="overlay-text">  UNIT PELAKSANAAN TEKNIS PERLINDUNGAN PEREMPUAN DAN ANAK</div>
+      </center>
     </div>
   </div>
 
@@ -83,207 +81,46 @@
 
   <div class="information-section">
     <div class="information-title mt-5 mb-">INFORMATION</div>
-    {{-- <section class="articles">
-      <article>
-        <div class="article-wrapper">
-          <figure>
-            <img src="https://picsum.photos/id/1011/800/450" alt="" />
-          </figure>
-          <div class="article-body">
-            <h2>This is some title</h2>
-            <p>
-              Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
-            </p>
-            <a href="#" class="read-more">
-              Read more <span class="sr-only">about this is some title</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>
-      <article>
-    
-        <div class="article-wrapper">
-          <figure>
-            <img src="https://picsum.photos/id/1005/800/450" alt="" />
-          </figure>
-          <div class="article-body">
-            <h2>This is some title</h2>
-            <p>
-              Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
-            </p>
-            <a href="#" class="read-more">
-              Read more <span class="sr-only">about this is some title</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>
-      <article>
-    
-        <div class="article-wrapper">
-          <figure>
-            <img src="https://picsum.photos/id/103/800/450" alt="" />
-          </figure>
-          <div class="article-body">
-            <h2>This is some title</h2>
-            <p>
-              Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
-            </p>
-            <a href="#" class="read-more">
-              Read more <span class="sr-only">about this is some title</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>
-    </section> --}}
-
     <section class="pt-5 pb-5">
-      <div class="container">
-          <div class="row">
-              <div class="col-6">
-                  <h3 class="mb-3">Carousel cards title </h3>
-              </div>
-              <div class="col-6 text-right">
-                  <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                      <i class="fa fa-arrow-left"></i>
-                  </a>
-                  <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
-                      <i class="fa fa-arrow-right"></i>
-                  </a>
-              </div>
-              <div class="col-12">
+        <div class="container">
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6 text-right">
+                    <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-12">
                   <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-  
-                      <div class="carousel-inner">
-                          <div class="carousel-item active">
-                              <div class="row">
-  
-                                  <div class="col-md-4 mb-3">
-                                      <div class="card">
-                                          <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                    <div class="carousel-inner">
+                        @foreach($posts as $key => $post)
+                            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                          <img src="{{ asset('storage/public/images-post/' . $post->image_url) }}" class="img-fluid rounded-start" alt="...">
                                           <div class="card-body">
-                                              <h4 class="card-title">Special title treatment</h4>
-                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  
-                                          </div>
-  
-                                      </div>
-                                  </div>
-                                  <div class="col-md-4 mb-3">
-                                      <div class="card">
-                                          <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
-                                          <div class="card-body">
-                                              <h4 class="card-title">Special title treatment</h4>
-                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-4 mb-3">
-                                      <div class="card">
-                                          <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
-                                          <div class="card-body">
-                                              <h4 class="card-title">Special title treatment</h4>
-                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  
-                                          </div>
-                                      </div>
-                                  </div>
-  
-                              </div>
-                          </div>
-                          <div class="carousel-item">
-                              <div class="row">
-  
-                                  <div class="col-md-4 mb-3">
-                                      <div class="card">
-                                          <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
-                                          <div class="card-body">
-                                              <h4 class="card-title">Special title treatment</h4>
-                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  
-                                          </div>
-  
-                                      </div>
-                                  </div>
-                                  <div class="col-md-4 mb-3">
-                                      <div class="card">
-                                          <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
-                                          <div class="card-body">
-                                              <h4 class="card-title">Special title treatment</h4>
-                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-4 mb-3">
-                                      <div class="card">
-                                          <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
-                                          <div class="card-body">
-                                              <h4 class="card-title">Special title treatment</h4>
-                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  
-                                          </div>
-                                      </div>
-                                  </div>
-  
-                              </div>
-                          </div>
-                          <div class="carousel-item">
-                              <div class="row">
-  
-                                  <div class="col-md-4 mb-3">
-                                      <div class="card">
-                                          <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
-                                          <div class="card-body">
-                                              <h4 class="card-title">Special title treatment</h4>
-                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  
-                                          </div>
-  
-                                      </div>
-                                  </div>
-                                  <div class="col-md-4 mb-3">
-                                      <div class="card">
-                                          <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
-                                          <div class="card-body">
-                                              <h4 class="card-title">Special title treatment</h4>
-                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-4 mb-3">
-                                      <div class="card">
-                                          <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
-                                          <div class="card-body">
-                                              <h4 class="card-title">Special title treatment</h4>
-                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-    
-  </div>
+                                                <h4 class="card-title">{{ $post->title }}</h4>
+                                                <p class="card-text">{{ $post->description }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
 
-
-  <div class="footer-section">
     <footer class="footer">
       <div class="waves">
         <div class="wave" id="wave1"></div>
@@ -315,7 +152,6 @@
       </ul>
       <p>&copy;2023 | All Rights Reserved</p>
     </footer>
-  </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
  

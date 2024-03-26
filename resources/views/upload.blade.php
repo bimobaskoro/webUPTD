@@ -63,13 +63,18 @@
     <div class="title mt-3">
       <h1 class="titleHome">UPLOAD</h1>
     </div>
-    <form method="POST" action="{{ route('create') }}">
+    <form method="POST" action="{{ route('create') }}" enctype="multipart/form-data">
       @csrf
       <div class="mt-3 mb-3">
           <label for="title" class="form-label">Judul</label>
           <input type="text" class="form-control" id="title" name="title">
       </div>
-      <label for="description" class="form-label">Deskripsi</label>
+      <label for="image" class="form-label">Upload Image</label>
+      <input type="file" class="form-control" id="image" name="image" accept="image/*">
+      @if ($errors->has('image'))
+      <span class="text-danger">{{ $errors->first('image') }}</span>
+    @endif
+      <label for="description" class="form-label mt-3">Deskripsi</label>
       <!-- Tambahkan bidang input tersembunyi untuk konten CKEditor -->
       <input type="hidden" name="description" id="description">
   
@@ -79,6 +84,7 @@
       <button type="submit" class="btn btn-outline-success">Kirim</button>
   </form>
   </div>
+
 
 
   <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>

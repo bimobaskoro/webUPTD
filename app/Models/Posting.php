@@ -9,5 +9,5 @@ class Posting extends Model
 {
     use HasFactory;
     protected $table = 'posts'; // Gantilah nama_tabel dengan nama tabel yang sesuai
-    protected $fillable = ['title', 'description'];
+    protected $fillable = ['id','title', 'description','image_url'];
 }
